@@ -4,6 +4,8 @@
   "description": "Project for STRV job application",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon --inspect=localhost:30000 index.js",
     "test": "mocha "
   },
   "repository": {
@@ -15,5 +17,16 @@
   ],
   "author": "Adrian Jarc",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/TheDeathStreaker/strv-addressbook-jarc-adrian#readme"
+  "homepage": "https://bitbucket.org/TheDeathStreaker/strv-addressbook-jarc-adrian#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@strv/eslint-config-mocha": "^1.1.0",
+    "@strv/eslint-config-node": "^1.0.1",
+    "eslint": "^5.15.3",
+    "nodemon": "^1.18.10"
+  }
 }
