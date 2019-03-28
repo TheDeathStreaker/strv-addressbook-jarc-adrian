@@ -3,22 +3,32 @@
 const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const errorHandler = require('strong-error-handler')
+const errorGen = require('./src/errorGenerator')
 
-const server = express()
+// eslint-disable-next-line no-process-env
+const PORT = process.env.PORT || 3000
 
-server.use(bodyParser.json())
-server.use(morgan('short'))
+const registerRouter = require('./src/register/register.route')
 
-server.post('/', (req, res, next) => {
-  res.send('HEY')
-})
+const app = express()
 
+app.use(bodyParser.json())
+app.use(morgan('short'))
+
+app.use('/register', registerRouter)
 
 // 404 error definition
-server.use((req, res) => res
+app.use((req, res) => res
   .status(404)
   .send({
-    error: 'Not found',
+    error: `Method ${req.method} for path ${req.path} not found`,
   }))
 
-server.listen(3000)
+// General error handler
+app.use(errorHandler({
+  debug: app.get('env') === 'development',
+  log: app.get('env') === 'development',
+}))
+
+app.listen(PORT)
