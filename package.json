@@ -5,31 +5,30 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "start:dev": "nodemon --inspect=localhost:30000 index.js",
+    "start:dev": "nodemon -r dotenv/config --inspect=localhost:30000 index.js",
     "test": "mocha ./test/unit/**/*.spec.js --timeout 5000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/TheDeathStreaker/strv-addressbook-jarc-adrian.git"
+    "url": "git+https://github.com/TheDeathStreaker/strv-addressbook-jarc-adrian.git"
   },
   "keywords": [
     "STRV"
   ],
   "author": "Adrian Jarc",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/TheDeathStreaker/strv-addressbook-jarc-adrian#readme",
+  "homepage": "https://github.com/TheDeathStreaker/strv-addressbook-jarc-adrian",
   "dependencies": {
     "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "firebase": "^5.9.1",
+    "firebase-admin": "^7.2.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "mongoose-delete": "^0.5.0",
     "morgan": "^1.9.1",
-    "strong-error-handler": "^3.2.0",
     "validator": "^10.11.0"
   },
   "devDependencies": {
@@ -37,6 +36,7 @@
     "@strv/eslint-config-node": "^1.0.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "dotenv": "^7.0.0",
     "eslint": "^5.15.3",
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
