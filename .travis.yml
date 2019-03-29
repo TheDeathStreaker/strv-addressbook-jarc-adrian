@@ -1,12 +1,5 @@
 dist: xenial
 
-addons:
-  apt:
-    sources:
-      - mongodb-4.0-xenial
-    packages:
-      - mongodb-org
-
 language: node_js
 
 services:
