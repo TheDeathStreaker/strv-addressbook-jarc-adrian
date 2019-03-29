@@ -1,12 +1,12 @@
 {
   "name": "strv-addressbook-jarc-adrian",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Project for STRV job application",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon --inspect=localhost:30000 index.js",
-    "test": "mocha ./test/integration/**/*.spec.js ./test/unit/**/*.spec.js --timeout 5000"
+    "test": "mocha ./test/unit/**/*.spec.js --timeout 5000"
   },
   "repository": {
     "type": "git",
