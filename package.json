@@ -19,6 +19,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/TheDeathStreaker/strv-addressbook-jarc-adrian#readme",
   "dependencies": {
+    "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "firebase": "^5.9.1",
