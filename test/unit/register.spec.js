@@ -70,7 +70,7 @@ describe('Test register service', () => {
     const password = 'teStteSt'
     const passwordFn = () => registerService.checkPassword(password)
     chai.assert.throws(passwordFn, 'Password must consist of atleast one uppercase letter, one '
-    + 'lowercase letter, one numer and one special character')
+    + 'lowercase letter, one number and one special character')
   })
 
 
