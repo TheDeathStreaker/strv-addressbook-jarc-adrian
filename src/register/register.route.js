@@ -1,8 +1,11 @@
 'use strict'
 
-const router = require('express').Router()
+const express = require('express')
 const controller = require('./register.controller')
+const validators = require('./register.validator')
 
-router.post('/add', controller.registerUser)
+const router = new express.Router()
+
+router.post('/add', validators.addUser, controller.registerUser)
 
 module.exports = router

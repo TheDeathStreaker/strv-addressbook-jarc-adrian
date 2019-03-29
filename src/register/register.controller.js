@@ -5,14 +5,13 @@ const service = require('./register.service')
 const registerUser = async (req, res, next) => {
   try {
     const {
-      username,
+      firstName,
+      lastName,
+      email,
       password,
     } = req.body
 
-    service.checkUsername(username)
-    service.checkPassword(password)
-
-    const added = await service.addUser(username, password)
+    const added = await service.addUser(firstName, lastName, email, password)
 
     return res.send(added)
   } catch (error) {
