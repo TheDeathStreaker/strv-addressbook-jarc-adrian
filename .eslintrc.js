@@ -6,5 +6,8 @@ module.exports = {
     '@strv/eslint-config-node/optional',
     '@strv/eslint-config-mocha/',
     '@strv/eslint-config-node/style'
-  ]
+  ],
+  globals: {
+    USERS: false
+  },
 }
