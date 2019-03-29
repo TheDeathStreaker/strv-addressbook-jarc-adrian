@@ -6,7 +6,7 @@ const env = require('./environment')
 
 
 const connectToMongo = () => {
-  const connString = env('MONGODB_URI')
+  const connString = env('MONGODB_URI') || 'mongodb://localhost:27018/strv_addressbook-jarc-adrian'
 
   mongoose.connect(connString, {
     useNewUrlParser: true,

@@ -9,9 +9,14 @@ const registerUser = async (req, res, next) => {
       lastName,
       email,
       password,
+      phoneNumber,
     } = req.body
 
-    const added = await service.addUser(firstName, lastName, email, password)
+    const added = await service.addUser(email, password, {
+      firstName,
+      lastName,
+      phoneNumber,
+    })
 
     return res.send(added)
   } catch (error) {

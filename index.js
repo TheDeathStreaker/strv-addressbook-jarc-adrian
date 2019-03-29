@@ -11,6 +11,7 @@ const env = require('./src/environment')
 const PORT = env('PORT') || 3000
 
 const registerRouter = require('./src/register/register.route')
+const loginRouter = require('./src/login/login.route')
 
 // Connect to database
 connectToDb()
@@ -20,7 +21,9 @@ const app = express()
 app.use(bodyParser.json())
 app.use(morgan('short'))
 
-app.use('/register', registerRouter)
+app.use('/', registerRouter)
+app.use('/', loginRouter)
+
 
 // 404 error definition
 app.use((req, res) => res

@@ -6,6 +6,6 @@ const validators = require('./register.validator')
 
 const router = new express.Router()
 
-router.post('/add', validators.addUser, controller.registerUser)
+router.post('/register', validators.addUser, controller.registerUser)
 
 module.exports = router
