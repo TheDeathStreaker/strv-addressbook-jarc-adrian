@@ -3,7 +3,7 @@
 const bcrypt = require('bcrypt')
 const env = require('./environment')
 
-const encryptPassword = async password => {
+const encryptPassword = password => {
   const saltRounds = env('SALT_ROUNDS') || 10
 
   const hashedPassword = bcrypt.hash(password, saltRounds)
@@ -11,11 +11,9 @@ const encryptPassword = async password => {
   return hashedPassword
 }
 
-const comparePasswords = async (hash, password) => {
-
-}
+const verifyPassword = (hash, password) => bcrypt.compare(password, hash)
 
 module.exports = {
   encryptPassword,
-  comparePasswords,
+  verifyPassword,
 }
