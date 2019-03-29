@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/TheDeathStreaker/strv-addressbook-jarc-adrian.svg?branch=develop)](https://travis-ci.org/TheDeathStreaker/strv-addressbook-jarc-adrian)
+[![Build Status](https://travis-ci.org/TheDeathStreaker/strv-addressbook-jarc-adrian.svg?branch=master)](https://travis-ci.org/TheDeathStreaker/strv-addressbook-jarc-adrian)
 
 [firebase-url]: https://firebase.com
 [rfc-http-url]: https://www.ietf.org/rfc/rfc2616.txt
