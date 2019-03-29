@@ -25,6 +25,9 @@ const createJWT = user => {
   }, jwtSecret)
 }
 
+const checkJWT = token => jwt.verify(token, jwtSecret)
+
 module.exports = {
   createJWT,
+  checkJWT,
 }
