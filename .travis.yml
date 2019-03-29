@@ -1,8 +1,15 @@
 language: node_js
-node_js:
-- '10'
 
-  # safelist
+services:
+  - mongodb
+
+node_js:
+  - '10'
+
+before_install:
+  - npm i -g npm@6.8
+
+# safelist
 branches:
   only:
   - master
@@ -13,3 +20,4 @@ deploy:
   api_key:
     secure: GuZ8sh+zSXVgrnx2qP2sRJLNXGTjFGEa7G7/K6z87o/8Ir0ddbuGV6C1uylFH6b2+fErfgSMtNX1FgzYQ7UFlxvTjqZfypgH+cxt1yxdzVIMVQkcSanO78VhQ30Hu/jTCLUi78YWEvdoelYdj0gM2soo0tvZ8t1pKDmXqnEnYcuwnpr8R6ZS6/EGhbmJZ9v3uOUo9CRPFqXvfTItoKWgfLxHCLUR4Xshep+3VdVkwxWON07lBpTMLkN+A6hv79lUaUhhy39KNFRMjl+VlpTPix1Eg4NeEkzxev/P1qTuUdGW7FMiKZ9GTBe7tHoBqGpLkMDLvGYoGuFtUvaOUGkzLHcmOaathDTHqMwCU/2AJ0W5w8WudaWcKRjaq3kJEDWXig4tx2PEmsqQmVXG90F/m7PQv/5QcMA09FsVnat0GYlV3eNuOXDrdc+1WNvI1WciO+a512h5KSS6CxI7/wb8reBiDTLBPiQeVwP7D7EnncGWCLM8U2hK628R4VGFeGbr/hrr1D1DMapyLhA6dIobfv+vuDg6gphHhNYOW4NeS8E/7TAAOuUT/BbLD6obXd6Gbi0uDz6QRLtDFnQCLdivNq6oa29oP+1NZSMr02is6BvEzseQghogcvLWxUKAolf+LIq6GYq5e08ExVJD7dQnq0XEfgG0Jd73SMyR1Q5vwnQ=
   app: strv-addressbook-jarc-adrian
+  on: master
