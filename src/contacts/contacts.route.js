@@ -1,8 +1,8 @@
 'use strict'
 
 const express = require('express')
-const controller = require('./login.controller')
-const validators = require('./login.validator')
+const controller = require('./contacts.controller')
+const validators = require('./contacts.validator')
 
 const router = new express.Router()
 
