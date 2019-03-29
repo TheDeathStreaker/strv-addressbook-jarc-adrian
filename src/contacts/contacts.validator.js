@@ -4,13 +4,15 @@ const service = require('./contacts.service')
 
 const check = (req, res, next) => {
   const {
+    name,
+    lastName,
     email,
-    password,
   } = req.body
 
   try {
+    service.checkIfDefined(name, 'name')
+    service.checkIfDefined(lastName, 'lastName')
     service.checkEmail(email)
-    service.checkPassword(password)
 
     return next()
   } catch (error) {

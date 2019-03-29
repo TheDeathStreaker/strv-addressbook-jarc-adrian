@@ -3,10 +3,7 @@
 const _ = require('lodash')
 const isEmail = require('validator/lib/isEmail')
 const errorGenerator = require('../errorGenerator')
-const crypto = require('../encryption')
-const jwt = require('../jwt')
-const db = require('../DAL/db')
-const fb = require('../firebase')
+const firebase = require('../firebase')
 
 
 const checkEmail = email => {
@@ -19,32 +16,33 @@ const checkEmail = email => {
   }
 }
 
-const checkPassword = password => {
-  if (_.isUndefined(password)) {
-    throw errorGenerator.badRequest('Password is required')
-  }
-
-  if (password.length < 8) {
-    throw errorGenerator.badRequest('Password must be atleast 8 characters long')
+const checkIfDefined = (value, type) => {
+  if (_.isUndefined(value)) {
+    throw errorGenerator.badRequest(`${type} is required`)
   }
 }
 
-const login = async (email, password) => {
-  const user = await db.users.findUserByEmail(email)
+const addContact = async (user, contact) => {
+  const {
+    email,
+  } = user
 
-  const passwordCorrect = await crypto.verifyPassword(user.password, password)
+  const propertyName = contact.name
+  + contact.lastName
+  + contact.email.replace(/\p{P}|\p{S}/ug, '_')
 
-  if (!passwordCorrect) {
-    throw errorGenerator.unauthorized('Password incorrect')
-  }
+  const toAdd = {}
+  toAdd[propertyName] = contact
+
+  await firebase.addToFirebase(toAdd, email)
 
   return {
-    token: jwt.createJWT(user),
+    status: 'OK',
   }
 }
 
 module.exports = {
   checkEmail,
-  checkPassword,
-  login,
+  checkIfDefined,
+  addContact,
 }
