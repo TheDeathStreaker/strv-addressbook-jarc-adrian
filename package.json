@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon --inspect=localhost:30000 index.js",
-    "test": "echo OK"
+    "test": "mocha ./test/integration/**/*.spec.js ./test/unit/**/*.spec.js --timeout 5000"
   },
   "repository": {
     "type": "git",
@@ -35,8 +35,12 @@
   "devDependencies": {
     "@strv/eslint-config-mocha": "^1.1.0",
     "@strv/eslint-config-node": "^1.0.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^5.15.3",
-    "nodemon": "^1.18.10"
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10",
+    "sinon": "^7.3.1"
   },
   "engines": {
     "node": "^10.15.3",
