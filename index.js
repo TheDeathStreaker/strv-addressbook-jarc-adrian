@@ -4,12 +4,16 @@ const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const errorHandler = require('strong-error-handler')
-const errorGen = require('./src/errorGenerator')
+const connectToDb = require('./src/mongoConnection')
+const env = require('./src/environment')
 
 // eslint-disable-next-line no-process-env
-const PORT = process.env.PORT || 3000
+const PORT = env('PORT') || 3000
 
 const registerRouter = require('./src/register/register.route')
+
+// Connect to database
+connectToDb()
 
 const app = express()
 
