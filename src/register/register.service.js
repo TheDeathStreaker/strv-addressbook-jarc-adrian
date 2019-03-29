@@ -41,20 +41,18 @@ const checkPassword = password => {
   }
 }
 
-const addUser = (username, password) => new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const rand = Math.floor(Math.random() * 4000)
+const addUser = async (firstName = 'John', lastName = 'Doe', email, password) => {
+  const user = new USERS({
+    firstName,
+    lastName,
+    email,
+    password,
+  })
 
-    if (rand % 2 === 0) {
-      console.log(`User ${username} with password ${password} added`)
+  const savedUser = await user.save()
 
-      return resolve({
-        id: '1234',
-      })
-    }
-    return reject(errorGenerator.badRequest(`User ${username} already exists`))
-  }, 300)
-})
+  return _.pick(savedUser, ['_id', 'email', 'firstName', 'lastName'])
+}
 
 module.exports = {
   checkEmail,
