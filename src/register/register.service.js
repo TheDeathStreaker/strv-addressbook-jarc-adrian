@@ -10,7 +10,7 @@ const checkPasswordRules = password => {
   const lowercaseRegex = new RegExp('\\p{Ll}', 'ug')
   const uppercaseRegex = new RegExp('\\p{Lu}', 'ug')
   const numberRegex = new RegExp('\\p{N}', 'ug')
-  const specialRegex = new RegExp('\\p{P}', 'ug')
+  const specialRegex = new RegExp('\\p{P}|\\p{S}', 'ug')
 
   return lowercaseRegex.test(password)
   && uppercaseRegex.test(password)
