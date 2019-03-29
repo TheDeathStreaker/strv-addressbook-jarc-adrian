@@ -3,6 +3,7 @@
 const _ = require('lodash')
 const isEmail = require('validator/lib/isEmail')
 const errorGenerator = require('../errorGenerator')
+const crypto = require('../encryption')
 
 const checkPasswordRules = password => {
   const lowercaseRegex = new RegExp('\\p{Ll}', 'ug')
@@ -42,6 +43,8 @@ const checkPassword = password => {
 }
 
 const addUser = async (firstName = 'John', lastName = 'Doe', email, password) => {
+  password = await crypto.encryptPassword(password)
+
   const user = new USERS({
     firstName,
     lastName,
