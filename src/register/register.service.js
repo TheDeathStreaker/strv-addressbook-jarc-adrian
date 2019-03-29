@@ -4,6 +4,7 @@ const _ = require('lodash')
 const isEmail = require('validator/lib/isEmail')
 const errorGenerator = require('../errorGenerator')
 const crypto = require('../encryption')
+const db = require('../DAL/db')
 
 const checkPasswordRules = password => {
   const lowercaseRegex = new RegExp('\\p{Ll}', 'ug')
@@ -42,17 +43,18 @@ const checkPassword = password => {
   }
 }
 
-const addUser = async (firstName = 'John', lastName = 'Doe', email, password) => {
+const addUser = async (email, password, optional) => {
   password = await crypto.encryptPassword(password)
 
-  const user = new USERS({
-    firstName,
-    lastName,
+  const user = {
+    firstName: optional.firstName || 'John',
+    lastName: optional.lastName || 'Doe',
     email,
     password,
-  })
+    phoneNumber: optional.phoneNumber,
+  }
 
-  const savedUser = await user.save()
+  const savedUser = await db.users.createUser(user)
 
   return _.pick(savedUser, ['_id', 'email', 'firstName', 'lastName'])
 }
