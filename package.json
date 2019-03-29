@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon --inspect=localhost:30000 index.js",
-    "test": "mocha ./test/integration/**/*.spec.js ./test/unit/**/*.spec.js --timeout 5000"
+    "test": "mocha ./test/unit/**/*.spec.js --timeout 5000"
   },
   "repository": {
     "type": "git",
