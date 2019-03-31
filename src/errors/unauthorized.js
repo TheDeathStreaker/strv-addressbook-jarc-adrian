@@ -1,5 +1,15 @@
 'use strict'
 
+/**
+ * @apiDefine UnauthorizedError Unauthorized
+ * @apiError (401) status Error's status code
+ * @apiError (401) message Error description
+ * @apiErrorExample {json} Error-401-Response:
+ * {
+ *   "status": 401,
+ *   "message": "..."
+ * }
+ */
 class UnauthorizedError extends Error {
   constructor(message) {
     super(message)
