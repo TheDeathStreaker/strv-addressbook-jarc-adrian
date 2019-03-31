@@ -7,7 +7,9 @@
     "start": "node index.js",
     "start:dev": "nodemon -r dotenv/config --inspect=localhost:30000 index.js",
     "test": "mocha ./test/unit/**/*.spec.js --timeout 5000",
-    "apidoc": "apidoc -f .js -i src/ -o documentation"
+    "apidoc": "apidoc -f .js -i src/ -o documentation",
+    "prestart": "npm run apidoc",
+    "prestart:dev": "npm run apidoc"
   },
   "repository": {
     "type": "git",
