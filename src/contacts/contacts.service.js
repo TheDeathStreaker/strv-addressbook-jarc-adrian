@@ -24,7 +24,7 @@ const checkIfDefined = (value, type) => {
 
 const addContact = async (user, contact) => {
   const {
-    email,
+    _id,
   } = user
 
   const propertyName = contact.name
@@ -34,7 +34,7 @@ const addContact = async (user, contact) => {
   const toAdd = {}
   toAdd[propertyName] = contact
 
-  await firebase.addToFirebase(toAdd, email)
+  await firebase.addToFirebase(toAdd, _id)
 
   return {
     status: 'OK',
