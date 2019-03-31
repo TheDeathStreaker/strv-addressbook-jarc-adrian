@@ -1,6 +1,6 @@
 {
   "name": "strv-addressbook-jarc-adrian",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Project for STRV job application",
   "main": "index.js",
   "scripts": {
