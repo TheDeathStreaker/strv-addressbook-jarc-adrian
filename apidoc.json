@@ -1,0 +1,17 @@
+{
+  "name": "Addressbook API",
+  "version": "1.0.0",
+  "description": "Addressbook API documentation",
+  "title": "Addressbook API documentation",
+  "url" : "https://strv-addressbook-jarc-adrian.herokuapp.com/",
+  "sampleUrl": "https://strv-addressbook-jarc-adrian.herokuapp.com/",
+  "template": {
+  	"withCompare": false,
+  	"withGenerator": true
+  },
+  "order": [
+    "Register",
+    "Login",
+    "Contacts"
+  ]
+}

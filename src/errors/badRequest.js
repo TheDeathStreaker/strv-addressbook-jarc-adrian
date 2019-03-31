@@ -1,5 +1,14 @@
 'use strict'
 
+/**
+ * @apiDefine BadRequestError Bad request
+ * @apiError (400) BadRequest Data sent to API is wrong
+ * @apiErrorExample {json} Error-400-Response:
+ * {
+ *   "status": 400,
+ *   "message": "..."
+ * }
+ */
 class BadRequestError extends Error {
   constructor(message) {
     super(message)

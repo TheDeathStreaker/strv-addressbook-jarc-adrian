@@ -1,5 +1,14 @@
 'use strict'
 
+/**
+ * @apiDefine UnauthorizedError Unauthorized
+ * @apiError (401) Unauthorized User is not allowed to do that
+ * @apiErrorExample {json} Error-401-Response:
+ * {
+ *   "status": 401,
+ *   "message": "..."
+ * }
+ */
 class UnauthorizedError extends Error {
   constructor(message) {
     super(message)
