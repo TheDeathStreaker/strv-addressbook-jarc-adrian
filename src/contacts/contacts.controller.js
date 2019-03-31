@@ -1,8 +1,8 @@
-/* eslint-disable valid-jsdoc */
 'use strict'
 
 const service = require('./contacts.service')
 
+// eslint-disable-next-line valid-jsdoc
 /**
  * @api {post} /contacts Add contact
  * @apiName Add
@@ -34,6 +34,7 @@ const service = require('./contacts.service')
  *
  * @apiUse BadRequestError
  * @apiUse UnauthorizedError
+ * @apiUse ServerError
  */
 const add = async (req, res, next) => {
   try {

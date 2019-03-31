@@ -1,9 +1,9 @@
-/* eslint-disable valid-jsdoc */
 'use strict'
 
 const jwt = require('../jwt')
 const errorGen = require('../errorGenerator')
 
+// eslint-disable-next-line valid-jsdoc
 /**
  * @apiDefine token User access only
  * @apiHeader {String} authorization Json web token (should be preponed with 'Bearer ')
