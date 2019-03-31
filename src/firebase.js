@@ -37,10 +37,8 @@ admin.initializeApp({
 
 const db = admin.database()
 
-const addToFirebase = (contact, email) => {
-  email = email.replace(/\p{S}|\p{P}/ug, '_')
-
-  const ref = db.ref(`addressbook/${email}`)
+const addToFirebase = (contact, id) => {
+  const ref = db.ref(`addressbook/${id}`)
 
   const contactRef = ref.child('contacts')
 

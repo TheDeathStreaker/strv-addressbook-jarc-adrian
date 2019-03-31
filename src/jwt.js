@@ -9,6 +9,7 @@ const jwtIss = env('JWT_ISS') || 'localhost'
 
 const createJWT = user => {
   const {
+    _id,
     email,
     firstName,
     lastName,
@@ -17,6 +18,7 @@ const createJWT = user => {
   const exp = moment().add(1, 'hours').unix()
 
   return jwt.sign({
+    _id,
     email,
     firstName,
     lastName,
