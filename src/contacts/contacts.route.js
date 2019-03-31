@@ -6,6 +6,6 @@ const validators = require('./contacts.validator')
 
 const router = new express.Router()
 
-router.post('/', validators.check, controller.login)
+router.post('/', validators.check, controller.add)
 
 module.exports = router
