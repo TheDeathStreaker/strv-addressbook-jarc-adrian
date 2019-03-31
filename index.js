@@ -34,6 +34,9 @@ app.use('/login', loginRouter)
 // Contacts
 app.use('/contacts', validateJWT, contactsRouter)
 
+// Documentation
+app.use('/docs', express.static('documentation'))
+
 // 404 error definition
 app.use((req, res) => res
   .status(404)
