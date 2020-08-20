@@ -23,7 +23,7 @@
   "homepage": "https://github.com/TheDeathStreaker/strv-addressbook-jarc-adrian",
   "dependencies": {
     "apidoc": "^0.17.7",
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "firebase-admin": "^7.2.0",
